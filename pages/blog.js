@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Footer from "./layout/Footer";
 import NavBarRight from './layout/NavBarRight';
 import { CardHeader } from 'reactstrap';
+import Link from 'next/link';
 
 function Blog(){
     return(
@@ -16,10 +17,13 @@ function Blog(){
         <br /><br /><br />
 
         <div className={styles.grid}>
-          <a href="./1" className={styles.card}>
-            <h2>Blog #1 &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+
+          <Link href="./1">
+            <a className={styles.card}>
+              <h2>Blog #1 &rarr;</h2>
+              <p>Find in-depth information about Next.js features and API.</p>
+            </a>
+          </Link>
 
           <a href="./2" className={styles.card}>
             <h2>Blog #2 &rarr;</h2>
