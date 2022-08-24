@@ -2,12 +2,20 @@ import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import profilePic from '../public/this.png'
 import Footer from "./layout/Footer";
-
+import {useState} from 'react';
 import NavBarRight from './layout/NavBarRight';
 import { CardHeader } from 'reactstrap';
 
 
 function two(){
+const [comments, setComments]= useState([]);
+const fetchComments= async () => {
+  const response=await fetch('api/comments');
+  const data= await response.json();
+  setComments(data);
+}
+
+
     return(
         <>
         <CardHeader>
@@ -39,6 +47,25 @@ function two(){
   <textarea cols={80} rows={12} id="text" name="textarea" maxLength={100} wrap/><br/>
   <button type="submit">Submit</button>
 </form></div>
+
+<div name='apiget'>
+  <button onClick={fetchComments}>
+    Load comments
+  </button>
+{
+  comments.map((comment) => {
+    return(
+      <div key={comment.id}>
+        {comment.id} {comment.text}
+
+      </div>
+
+    )
+  }
+
+  )
+}
+</div>
             </main>
             <Footer></Footer></>
     );
