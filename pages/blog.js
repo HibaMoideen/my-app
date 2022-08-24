@@ -25,21 +25,24 @@ function Blog(){
             </a>
           </Link>
 
-          <a href="./2" className={styles.card}>
+          <Link href="./2">
+          <a className={styles.card}>
             <h2>Blog #2 &rarr;</h2>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
+          </Link>
 
+          <Link href="#">
           <a
-            href="#"
             className={styles.card}
           >
             <h2>Blog #3 &rarr;</h2>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
+          </Link>
 
+          <Link href="#">
           <a
-            href="#"
             className={styles.card}
           >
             <h2>Blog #4 &rarr;</h2>
@@ -47,6 +50,8 @@ function Blog(){
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
+          </Link>
+
         </div>
       </main>
       <Footer/></>
